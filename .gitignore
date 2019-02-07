@@ -59,3 +59,5 @@ Makefile
 test-driver
 tests/*.log
 tests/*.trs
+
+# credential.yaml

@@ -1,7 +1,7 @@
 FROM debian:9-slim as builder
 WORKDIR /openconnect
 RUN apt update \
-    && apt install -y  \
+	&& apt install -y  \
 	build-essential \
 	gettext \
 	autoconf \
@@ -13,15 +13,9 @@ RUN apt update \
 	pkg-config \
 	libgnutls28-dev \
 	git \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+	&& apt-get clean \
+	&& rm -rf /var/lib/apt/lists/*
 ADD . .
 RUN ./autogen.sh
 RUN ./configure
 RUN make
-
-#FROM debian:9-slim
-#WORKDIR /openconnect
-#COPY --from=builder /openconnect .
-#RUN make install
-#RUN ldconfig
