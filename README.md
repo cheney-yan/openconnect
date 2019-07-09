@@ -24,7 +24,7 @@ execute:
 1. Under the root of the source code:
     
      `docker build -t openconnect:latest .`
-2. Edit the `docker-compose.yml` file, update the `image: cheneyyan/openconnect` to `image openconnect`
+2. Edit the `docker-compose.yml` file, update the `image: cheneyyan/openconnect` to `image: openconnect`
 3. Execute
    `docker-compose up -d`
 
